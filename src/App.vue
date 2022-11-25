@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <HeaderComp/>
-    <MainComp/>
+    <MainComp
+    v-for="(elem, index) in dataAlbum"
+    :key="index" 
+    :card="elem" 
+    />
   </div>
 </template>
 
@@ -19,16 +23,25 @@ export default {
   },
   data() {
     return {
-
+      dataAlbum: ''
     }
   },
-  mounted() {
+  mounted(){
+    this.getAlbum()
+  },
+  methods: {
+    getAlbum(){
     axios.get('https://flynn.boolean.careers/exercises/api/array/music')
     .then((response) => {
-      console.log(response)
-    } )
+      this.dataAlbum = response.data.response
+    })
+
+     
+    } 
+    }
+
   }
-}
+
 </script>
 
 <style lang="scss">
