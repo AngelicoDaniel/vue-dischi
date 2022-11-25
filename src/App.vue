@@ -7,12 +7,23 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-// import axios from 'axios' 
+import axios from 'axios' 
 
 export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+
+    }
+  },
+  mounted() {
+    axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+    .then((response) => {
+      console.log(response)
+    } )
   }
 }
 </script>
