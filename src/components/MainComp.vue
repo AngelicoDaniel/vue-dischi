@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-        <div class="card p-4 m-3 justify-content-center align-items-center" style="width: 12rem">
+        <div class="card justify-content-center align-items-center" >
           <img :src="card.poster" class="p-1" alt="..." />
           <div>
             <h5 class="text-white">{{card.title}}</h5>
@@ -35,7 +35,7 @@ export default {
     .card{
         background-color: #424242;
         height: 300px; 
-
+        margin: 4.2rem;
     }
 
 </style>

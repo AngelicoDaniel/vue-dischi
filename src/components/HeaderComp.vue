@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="d-flex align-items-center">
       <img src="../assets/logo.png" alt="">
     </div>
    
@@ -24,7 +24,6 @@ div{
   text-align: start;
   img{
     width: 50px;
-    padding-top: 15px;
     margin-left: 20px;
   }
 }
