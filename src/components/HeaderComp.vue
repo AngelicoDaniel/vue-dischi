@@ -19,7 +19,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 div{
-  height: 80px;
+  height: 10vh;
   background-color: #2E3A46 ;
   text-align: start;
   img{

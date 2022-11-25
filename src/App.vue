@@ -1,11 +1,14 @@
 <template>
   <div id="app">
     <HeaderComp/>
-    <MainComp
+    <section class="container-fluid">
+          <MainComp
     v-for="(elem, index) in dataAlbum"
     :key="index" 
     :card="elem" 
     />
+    </section>
+
   </div>
 </template>
 
@@ -52,4 +55,14 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+section {
+  background-color: #1E2D3B;
+  height: 90vh;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+
 </style>
