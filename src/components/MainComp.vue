@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="calc">
-        <div class="card p-4 m-3" style="width: 18rem">
+    <div>
+        <div class="card p-4 m-3 justify-content-center align-items-center" style="width: 12rem">
           <img :src="card.poster" class="p-1" alt="..." />
           <div>
-            <h5>{{card.title}}</h5>
-            <p>{{card.author}} <br>
+            <h5 class="text-white">{{card.title}}</h5>
+            <p class="text-secondary">{{card.author}} <br>
                 {{card.year}}
             </p>
           </div>
@@ -27,17 +27,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.calc{
-    width: calc(100% / 5);
+
+ 
     img{
         width: 150px;
-        align-self: center;
     }
     .card{
         background-color: #424242;
-        height: 300px;
-        width: 100px;  
-        color: white;
+        height: 300px; 
+
     }
-}
+
 </style>

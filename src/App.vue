@@ -6,6 +6,7 @@
     v-for="(elem, index) in dataAlbum"
     :key="index" 
     :card="elem" 
+    class="calc"
     />
     </section>
 
@@ -59,9 +60,13 @@ section {
   background-color: #1E2D3B;
   height: 90vh;
   flex-wrap: wrap;
-  display: flex;
+  display: flex; 
+}
+
+.calc{
+  width: calc(100% / 5);
+  margin: auto;
   justify-content: center;
-  text-align: center;
 }
 
 
