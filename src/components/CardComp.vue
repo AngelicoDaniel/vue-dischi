@@ -3,7 +3,7 @@
         <div class="card">
         <img :src="cardProps.poster" class="card-img-top" alt="Card image cap">
         <div class="card-body">
-        <h5 class="card-title">{{cardProps.title}}</h5>
+        <h5 class="card-title text-white">{{cardProps.title}}</h5>
         <p class="card-text">{{cardProps.author}}</p>
         <p class="card-text">{{cardProps.year}}</p>
   </div>

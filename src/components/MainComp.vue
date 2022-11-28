@@ -1,7 +1,11 @@
 <template>
   <main >
     <div class="container">
-       <AlbumList/> 
+      <select name="" id="" v-model="valueOptionSelected">
+            <option :value="elem" v-for="(elem, index) in arrGeneri" :key="index">{{elem}}</option>
+        </select>
+
+       <AlbumList @emitGeneri="methodsListaGeneri"/> 
     </div>
      
   </main>
@@ -9,25 +13,26 @@
 
 <script>
 import AlbumList from "./AlbumList.vue"
-import axios from "axios";
+
 
 
 export default {
-    name: 'CardComp',
+    name: 'MainComp',
+
     components: {
       AlbumList
     },
     data() {
       return {
-        dataAlbum: [],
+        arrGeneri: [],
+        valueOptionSelected: ''
       };
     },
-    mounted() {
-      axios.get("https://flynn.boolean.careers/exercises/api/array/music")
-      .then((response) => {
-        console.log(response.data);
-        this.dataAlbum = response.data.response
-      })
+
+    methods: {
+      methodsListaGeneri(valoreEmit){
+        this.arrGeneri = valoreEmit
+      }
     }
 
 }

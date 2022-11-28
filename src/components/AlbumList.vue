@@ -1,11 +1,12 @@
 <template>
-  <div class="albumList row row-cols-5 justify-content-center">
-    <CardComp
-    v-for="(elem, index) in albums"
-    :key="index"
-    :cardProps="elem"
-    />
-  </div>
+    <div class="albumList">
+
+   
+
+        <div class="row row-cols-5 justify-content-center">
+            <CardComp v-for="(elem, index) in albums" :key="index" :cardProps="elem"/>
+        </div> 
+    </div>
 </template>
 
 <script>
@@ -20,13 +21,23 @@ export default {
     },
     data(){
         return{
-            albums: []
+            albums: [],
+            arrGeneri: [],
+           
         }
     },
-    mounted(){
+    mounted() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
              .then((response) =>{
                 this.albums = response.data.response
+
+                this.albums.forEach((singoloAlbum) => {
+                    if(!this.arrGeneri.includes(singoloAlbum.genre)) {
+                        this.arrGeneri.push(singoloAlbum.genre)
+                    }
+                })
+                this.$emit('emitGeneri', this.arrGeneri)
+
              })
     }
 }
