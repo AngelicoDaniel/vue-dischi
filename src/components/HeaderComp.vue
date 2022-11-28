@@ -1,27 +1,21 @@
 <template>
-  <div>
-    <div class="d-flex align-items-center">
-      <img src="../assets/logo.png" alt="">
-    </div>
-   
-  </div>
+  <header>
+      <img src="../assets/logo.png" alt="">  
+  </header>
 </template>
 
 <script>
 export default {
-  name: 'HeaderComp',
-  props: {
-    msg: String
-  }
+  name: 'HeaderComp'
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped lang="scss">
-div{
-  height: 10vh;
+header{
   background-color: #2E3A46 ;
-  text-align: start;
+  padding: 20px;
+  height: 10%;
   img{
     width: 50px;
     margin-left: 20px;

@@ -1,41 +1,43 @@
 <template>
-  <div>
-    <div>
-        <div class="card justify-content-center align-items-center" >
-          <img :src="card.poster" class="p-1" alt="..." />
-          <div>
-            <h5 class="text-white">{{card.title}}</h5>
-            <p class="text-secondary">{{card.author}} <br>
-                {{card.year}}
-            </p>
-          </div>
-        </div>
-     
+  <main >
+    <div class="container">
+       <AlbumList/> 
     </div>
-  </div>
+     
+  </main>
 </template>
 
 <script>
+import AlbumList from "./AlbumList.vue"
+import axios from "axios";
 
 
 export default {
-    name: 'MainComp',
-    props: {
-        card: Object,
+    name: 'CardComp',
+    components: {
+      AlbumList
+    },
+    data() {
+      return {
+        dataAlbum: [],
+      };
+    },
+    mounted() {
+      axios.get("https://flynn.boolean.careers/exercises/api/array/music")
+      .then((response) => {
+        console.log(response.data);
+        this.dataAlbum = response.data.response
+      })
     }
+
 }
 </script>
 
-<style lang="scss" scoped>
-
- 
-    img{
-        width: 150px;
-    }
-    .card{
-        background-color: #424242;
-        height: 300px; 
-        margin: 4.2rem;
-    }
+<style scoped lang="scss">
+main{
+    background-color: #1E2D3B;
+    height: 90%;
+    padding: 20px;
+}
 
 </style>
