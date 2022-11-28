@@ -5,7 +5,7 @@
             <option :value="elem" v-for="(elem, index) in arrGeneri" :key="index">{{elem}}</option>
         </select>
 
-       <AlbumList @emitGeneri="methodsListaGeneri"/> 
+       <AlbumList @emitGeneri="methodsListaGeneri" :sceltaUtente="valueOptionSelected"/> 
     </div>
      
   </main>

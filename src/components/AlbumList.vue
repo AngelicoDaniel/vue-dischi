@@ -1,10 +1,9 @@
 <template>
     <div class="albumList">
 
-   
 
         <div class="row row-cols-5 justify-content-center">
-            <CardComp v-for="(elem, index) in albums" :key="index" :cardProps="elem"/>
+            <CardComp v-for="(elem, index) in funzioneComputed" :key="index" :cardProps="elem"/>
         </div> 
     </div>
 </template>
@@ -19,11 +18,24 @@ export default {
     components: {
         CardComp
     },
+    props: {
+        sceltaUtente: String
+    },
     data(){
         return{
             albums: [],
-            arrGeneri: [],
-           
+            arrGeneri: [],           
+        }
+    },
+    computed: {
+        funzioneComputed(){
+            if(this.sceltaUtente == '') {
+                return this.albums  
+            } else {
+                return this.albums.filter((elem) => {
+                    return elem.genre == this.sceltaUtente
+                })
+            }
         }
     },
     mounted() {
